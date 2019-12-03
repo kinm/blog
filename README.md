@@ -74,16 +74,16 @@ function DeepCopy(obj){
     let res = obj;
     // 之所以判断obj !== null，是因为typeof null的值为'object'
     if (typeof obj === 'object' && obj !== null) {
-        // 如果参数obj是对象并且不为null,就通过Object.prototype的toString方法来判断这个对象是数组还是对象
-        // 如果obj是数组（"[object Array]"），则对res进行空数组赋值，否则对res进行空对象赋值
+        // 通过Object.prototype的toString方法来判断这个对象是数组还是对象
+        // 如果obj是数组，则对res进行空数组赋值，否则对res进行空对象赋值
         res = Object.prototype.toString.call(obj) === "[object Array]" ? [] : {};
-        // 通过for in来进行遍逆
+        // 通过for in对obj进行遍逆
         for (let key in obj) {
             // 通过递归再次执行DeepCopy
             res[key] = DeepCopy(obj[key]);
         }
     }
-    // 如果此时obj为非，则直接复制
+    // 如果此时typeof obj不是‘object’，则直接复制
     return res;
 }
 ```
