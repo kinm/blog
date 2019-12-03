@@ -72,13 +72,14 @@ let myBook2 = myBook
 ```javascript
 function DeepCopy(obj){
     let res = obj;
+    // 之所以判断obj !== null，是因为typeof null的值为'object'
     if (typeof obj === 'object' && obj !== null) {
         // 如果参数obj是对象并且不为null,就通过Object.prototype的toString方法来判断这个对象是数组还是对象
-        // (之所以判断obj !== null，是因为typeof null的值为'object'）
+        // 如果obj是数组（"[object Array]"），则对res进行空数组赋值
+        // 若obj是对象（"[object object]"），则对res进行空对象赋值
         res = Object.prototype.toString.call(obj) === "[object Array]" ? [] : {};
-        // 如果obj是数组或对象，则通过for in来进行遍逆
+        // 通过for in来进行遍逆
         for (let key in obj) {
-            // 使用DeepCopy进行递归
             // 如果此时obj[key]为基础数据类型，则直接复制，若为引用数据类型则通过递归再次执行DeepCopy
             res[key] = DeepCopy(obj[key]);
         }
