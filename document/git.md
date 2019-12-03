@@ -78,6 +78,8 @@ $ git clone <repository> <directory> // <repository>指定远程数据库的URL�
 
 ```
 $ git pull <repository> <refspec> //<repository>处输入目标地址，<refspec>处指定分支
+// or
+$ git pull origin master
 ```
 
 ## **建立分支branch**
