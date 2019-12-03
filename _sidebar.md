@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-* [简介](/)
+* [探索JS深浅复制](/)
 * [Flex布局](document/flex.md "Flex布局")
-* [Git命令](document/git.md "Git命令")
+* [Git命令记录](document/git.md "Git命令记录")

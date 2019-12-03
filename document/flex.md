@@ -1,11 +1,7 @@
-# Flex布局
+## Flex 基础概念
 
-## **Flex 基础概念**
-
-```
-display:flex;
-
-//Webkit 内核的浏览器，必须加上-webkit前缀。
+```css
+display:flex; // Webkit 内核的浏览器，必须加上-webkit前缀。
 ```
 当某个元素的display指定为flex后，该元素将沿着主轴（main axis）和交叉轴（cross axis）来布局：
 
@@ -18,11 +14,11 @@ display:flex;
 
 *****
 
-## **Flex 容器的属性**
+## Flex 容器的属性
 
 ### flex-direction属性
 
-```
+```css
 flex-direction: row | row-reverse | column | column-reverse;
 ```
 * flex-direction 属性根据主轴来设置Flex Item的排列方向
@@ -33,7 +29,7 @@ flex-direction: row | row-reverse | column | column-reverse;
 
 ### flex-wrap属性
 
-```
+```css
 flex-wrap: nowrap | wrap | wrap-reverse;
 ```
 * flex-wrap 属性定义Item换行。（用于轴线上无法排列所有Item时的换行）
@@ -43,7 +39,7 @@ flex-wrap: nowrap | wrap | wrap-reverse;
 
 ### flex-flow属性
 
-```
+```css
 flex-flow: <flex-direction> || <flex-wrap>;
 ```
 * flex-flow 属性是flex-direction和flex-wrap的缩写，你可以将：
@@ -57,7 +53,7 @@ flex-flow: row wrap;
 
 ### justify-content属性
 
-```
+```css
 justify-content: flex-start | flex-end | center | space-between | space-around;
 ```
 * justify-content 属性定义Item在主轴上的对齐方式
@@ -69,7 +65,7 @@ justify-content: flex-start | flex-end | center | space-between | space-around;
 
 ### align-items属性
 
-```
+```css
 align-items: flex-start | flex-end | center | baseline | stretch;
 ```
 * align-items 属性定义Item在交叉轴上的对齐方式。
@@ -81,7 +77,7 @@ align-items: flex-start | flex-end | center | baseline | stretch;
 
 ### align-content属性
 
-```
+```css
 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
 ```
 * align-content 属性定义了多根轴线的对齐方式，如果Item只有一根轴线，该属性不起作用
@@ -95,11 +91,11 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 ![](https://kinm.github.io/images/screenshot_1570784978820.png)
 *****
 
-## **Flex Item的属性**
+## Flex Item属性
 
 ### order属性
 
-```
+```css
 .item {
   order: <integer>;
 }
@@ -108,7 +104,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 ### flex-grow属性
 
-```
+```css
 .item {
   flex-grow: <number>; /* default 0 */
 }
@@ -117,7 +113,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 ### flex-shrink属性
 
-```
+```css
 .item {
     flex-shrink: <number>; /* default 1 */
 }
@@ -126,7 +122,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 ### flex-basis属性
 
-```
+```css
 .item {
   flex-basis: <length> | auto; /* default auto */
 }
@@ -135,7 +131,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 ### flex属性
 
-```
+```css
 .item {
   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
 }
@@ -145,7 +141,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 ### align-self属性
 
-```
+```css
 .item {
   align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
@@ -156,3 +152,5 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 * center：交叉轴中间对齐
 * baseline：Item第一行文字的基线对齐
 * stretch：如果Item未设置高度或设为auto，将占满整个容器的高度（默认值）
+
+> 欢迎收藏和提交issues讨论。[GitHub地址](https://github.com/kinm/kinm.github.io/issues)
