@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-* [Home](/)
-* [Flex布局指南](document/flex.md "Flex布局指南")
+* [简介](/)
+* [Flex布局](document/flex.md "Flex布局")
 * [Git命令](document/git.md "Git命令")
