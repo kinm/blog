@@ -1,6 +1,6 @@
 ## JS深复制问题来源
 
-> JS中有五种基本数据类型`string、number、boolean、null、undefined`和一种复杂数据类型`object`(`function`和`array`是`object`，以及ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`也都是`object`，虽然`null`在typeof时也是`object`，但本篇并不涉及！)
+> JS中有五种基本数据类型`string、number、boolean、null、undefined`和一种复杂数据类型`object`(`array`以及ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`也都是`object`)
 
 对基本类型数据的复制与平时对变量进行赋值的操作并无特别之处，一般称之为浅复制（浅拷贝），示例如下：
 
@@ -63,7 +63,9 @@ let myBook2 = myBook
     'self':{name: "andy", age: 25},
     'skill':function(){
         console.log('kungfu')
-    }
+    },
+    'setTo':new Set(),
+    'mapTo':new Map()
 }
 ```
 
@@ -79,11 +81,11 @@ function DeepCopy(obj){
         res = Object.prototype.toString.call(obj) === "[object Array]" ? [] : {};
         // 通过for in来进行遍逆
         for (let key in obj) {
-            // 如果此时obj[key]为基础数据类型，则直接复制，若为引用数据类型则通过递归再次执行DeepCopy
+            // 通过递归再次执行DeepCopy
             res[key] = DeepCopy(obj[key]);
         }
     }
-    // 如果此时obj为基础数据类型，则直接复制
+    // 如果此时obj为非，则直接复制
     return res;
 }
 ```
