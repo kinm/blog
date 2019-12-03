@@ -1,6 +1,6 @@
 ## JS深复制问题来源
 
-> JS中有五种基本数据类型`string、number、boolean、null、undefined`和一种复杂数据类型`object`，ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`
+> JS中有基本数据类型`string、number、boolean、null、undefined`和引用数据类型`Object、Array、Date、RegExp、Function`，ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`
 
 对基本类型数据的复制与平时对变量进行赋值的操作并无特别之处，一般称之为浅复制（浅拷贝），示例如下：
 
@@ -12,7 +12,7 @@ console.log(name) // 'andy'
 console.log(nameTo) // 'andy1'
 ```
 
-对复杂数据类型的复制则不同于基本数据类型的复制，一般称之为深复制（深拷贝），示例如下：
+对引用数据类型的复制则不同于基本数据类型，一般称之为深复制（深拷贝），示例如下：
 
 ```javascript
 // 先定义一个对象和一个数组
@@ -39,7 +39,7 @@ console.log(myBook2) // ["javascript高级程序设计", "深入理解ES6", "深
 
 > 以上代码中并无明显修改self和myBook的操作，但self和myBook随着self2和myBook2的改动而改动了！
 
-因为给变量直接赋予`object`类型只是对当前对象进行了引用，而并没有重新分配内存空间对当前对象的属性进行存储，所以当执行代码
+因为给一个变量直接赋值引用数据类型，该变量只是对其进行了引用，而并没有重新分配内存空间对其进行存储，所以当执行代码
 
 ```javascript
 let self2 = self
