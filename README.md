@@ -1,6 +1,6 @@
 ## JS深复制问题来源
 
-> JS中有五种基本数据类型`string、number、boolean、null、undefined`和一种复杂数据类型`object`(`array`以及ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`也都是`object`)
+> JS中有五种基本数据类型`string、number、boolean、null、undefined`和一种复杂数据类型`object`，ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`
 
 对基本类型数据的复制与平时对变量进行赋值的操作并无特别之处，一般称之为浅复制（浅拷贝），示例如下：
 
@@ -63,9 +63,7 @@ let myBook2 = myBook
     'self':{name: "andy", age: 25},
     'skill':function(){
         console.log('kungfu')
-    },
-    'setTo':new Set(),
-    'mapTo':new Map()
+    }
 }
 ```
 
