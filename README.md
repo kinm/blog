@@ -1,6 +1,6 @@
 ## JS深复制问题来源
 
-> JS中有基本数据类型`string、number、boolean、null、undefined`和引用数据类型`Object、Array、Date、RegExp、Function`，ES6新增的四种数据类型`Set、WeakSet、Map、WeakMap`
+> JS(ES5)中有基本数据类型`string、number、boolean、null、undefined`和引用数据类型`Object、Array、Date、RegExp、Function`，ES6新增的四种数据结构`Set、WeakSet、Map、WeakMap`以及一种基础数据类型`symbol`
 
 对基本类型数据的复制与平时对变量进行赋值的操作并无特别之处，一般称之为浅复制（浅拷贝），示例如下：
 
