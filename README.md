@@ -47,9 +47,7 @@ let myBook2 = myBook
 ```
 时，self2和myBook2并没有达到复制的目的！
 
-## JS深复制的实现
-
-以下几种方式实现深复制在不同情况下都存在较大弊端，所以使用时需要严格区分场景！
+以上示例要达到深复制的目的，可以使用如下方式：
 
 - JSON对象的parse和stringify，复制JSON格式对象时适用，如上面示例代码中`let self2 = self`时
 - 数组对象的slice方法和concat方法，复制数组时适用，如上面示例代码中`let myBook2 = myBook`时
@@ -66,6 +64,9 @@ let myBook2 = myBook
     }
 }
 ```
+
+
+## JS深复制的实现
 
 以上几种方式都不可用，所以还是自己手撸一个吧！
 
