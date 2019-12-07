@@ -81,6 +81,10 @@ console.log(myBook2) // ["javascript高级程序设计", "深入理解ES6", "深
     }
 }
 ```
+
+- ES6的扩展运算符`...`和`Object.assign`（这两种方法都是只对所要复制的数据进行一层深复制，仅适用于简单的一维数据结构）
+
+
 以上几种方式都不可用，所以还是自己手撸一个吧！
 
 ## JS深复制的实现
@@ -103,5 +107,7 @@ function DeepCopy(obj){
     return res;
 }
 ```
+
+> 以上代码并非完全没有问题，因为如果一个对象的原型链太深，递归时会出现内存溢出的问题！所以在使用时还需要自行斟酌复制的对象是否有较深的原型链！
 
 > 欢迎收藏和提交issues讨论。[GitHub地址](https://github.com/kinm/kinm.github.io/issues)
