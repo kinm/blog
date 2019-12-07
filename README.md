@@ -60,7 +60,7 @@ console.log(self) // {name: "andy", age: 25}
 console.log(self2) // {name: "tom", age: 23}
 ```
 
-- 数组对象的slice方法和concat方法，复制数组时适用
+- 数组对象的slice方法和concat方法，复制一维基础数据类型的数组时适用
 
 ```javascript
 let myBook = ['javascript高级程序设计','深入理解ES6','数据结构与算法javascript描述']
