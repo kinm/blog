@@ -40,18 +40,35 @@ console.log(myBook2) // ["javascript高级程序设计", "深入理解ES6", "深
 > 以上代码中并无明显修改self和myBook的操作，但self和myBook随着self2和myBook2的改动而改动了！
 
 因为给一个变量直接赋值引用数据类型，该变量只是对其进行了引用，而并没有重新分配内存空间对其进行存储，所以当执行代码
-
-```javascript
-let self2 = self
-let myBook2 = myBook
-```
+`let self2 = self`、
+`let myBook2 = myBook`
 时，self2和myBook2并没有达到复制的目的！
 
 以上示例要达到深复制的目的，可以使用如下方式：
 
-- JSON对象的parse和stringify，复制JSON格式对象时适用，如上面示例代码中`let self2 = self`时
-- 数组对象的slice方法和concat方法，复制数组时适用，如上面示例代码中`let myBook2 = myBook`时
-- ES6的Object.assign(这玩意儿本质上还是浅复制,慎用)
+- JSON对象的parse和stringify，复制JSON格式对象时适用
+
+```javascript
+let self = {
+    name:'andy',
+    age:25,
+}
+let self2 = JSON.parse(JSON.stringify(self))
+self2.name = 'tom'
+self2.age = 23
+console.log(self) // {name: "andy", age: 25}
+console.log(self2) // {name: "tom", age: 23}
+```
+
+- 数组对象的slice方法和concat方法，复制数组时适用
+
+```javascript
+let myBook = ['javascript高级程序设计','深入理解ES6','数据结构与算法javascript描述']
+let myBook2 = myBook.slice(0,myBook.length)
+myBook2[2] = '深入浅出NodeJS'
+console.log(myBook) // ["javascript高级程序设计", "深入理解ES6", "数据结构与算法javascript描述"]
+console.log(myBook2) // ["javascript高级程序设计", "深入理解ES6", "深入浅出NodeJS"]
+```
 
 但当我要复制一个复杂对象时，如下：
 
@@ -64,11 +81,9 @@ let myBook2 = myBook
     }
 }
 ```
-
+以上几种方式都不可用，所以还是自己手撸一个吧！
 
 ## JS深复制的实现
-
-以上几种方式都不可用，所以还是自己手撸一个吧！
 
 ```javascript
 function DeepCopy(obj){
